@@ -1,26 +1,34 @@
 <template>
-  <div>
-    <chart></chart>
-    {{ ab }}
-  </div>
+  <trading-vue v-bind="config" ref="tradingVue"></trading-vue>
 </template>
-
 <script>
-const App = {
-  components: {
-    chart: () => import("@/components/b.vue"),
-  },
+import Overlays from "tvjs-overlays";
+import { DataCube, TradingVue } from "trading-vue-js";
+import XP from "tvjs-xp";
+
+export default {
+  components: { TradingVue },
+  name: "app",
   data() {
     return {
-      ab: "3323232",
+      config: {
+        height: 600,
+        width: 600,
+        titleTxt: "Trade",
+        toolbar: true,
+        legendButtons: ["display"],
+        extensions: Object.values(XP),
+        overlays: Object.values(Overlays),
+
+        data: new DataCube({
+          chart: {
+            data: [],
+          },
+          onchart: [],
+          offchart: [],
+        }),
+      },
     };
   },
-  methods: {
-    globalFunction() {
-      this.ab = "ddsds";
-      console.log("Function called from main.js!");
-    },
-  },
 };
-export default App;
 </script>

@@ -1,5 +1,5 @@
 {
-  "name": "trade-chart-lib",
+  "name": "trading-vue-js-wrapper",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
