@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
+    <title>Example</title>
 </head>
 
 <body>
     <div id="chart"></div>
-    
+
     <script type="module">
-        import TradeChart from "/dist/trading-vue-js-wrapper.mjs"
+        import TradeChart from "/dist/trading-vue-wrapper.mjs"
 
         const data = [
             [1593824400000, 9082.6, 9082.7, 9069, 9078.08979168, 32.34898355],
@@ -1085,7 +1085,7 @@
                 length: 20,
             },
         }); // add ema 20
-
+        
         setInterval(() => {
             console.log("del EMA, 20");
             dc.del("EMA, 20"); // del ema 20
